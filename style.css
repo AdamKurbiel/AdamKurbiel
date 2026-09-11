@@ -3,13 +3,42 @@
     src: url("assets/fonts/InstrumentSerif.ttf");
 }
 
-body{
-    background-color: black;
-    margin: 0%;
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: #413723;
     user-select: none;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    font-family: InstrumentSeriff;
+    letter-spacing: 5px;
+}
+
+
+.lightbulbs{
+    background-image: url("assets/images/lightbulbs.png");
+    background-repeat: repeat-x;
+    position: absolute;
+    z-index: 6;
+    height: 20vw;
+    width: 100vw;
+
 }
 
 .fixed {
+    overflow: hidden;
     z-index: 1;
     position: fixed;
     left: 50%;
@@ -19,8 +48,6 @@ body{
     font-family: InstrumentSeriff;
     font-size: 18vw;
     white-space: nowrap;
-
-    z-index: 1;
 }
 
 .fixed::before {
@@ -34,28 +61,62 @@ body{
     z-index: -1;
 }
 
-.profile_bg td{
+.profile_bg td {
     width: 100vw;
-    padding: 0%;
+    padding: 0;
 }
 
-.profile_bg table{
+.profile_bg table {
     border-collapse: collapse;
-    margin: 0%;
+    margin: 0;
 }
 
-.profile_bg img{
+.profile_bg img {
     width: 100%;
     display: block;
 }
 
-main{
+.container{
+    z-index: 5;
     position: relative;
-    z-index: 10;
+    background-color: #413723;
+    height:100vw;
 
-    margin: 0%;
-    width: 100vw;
-    height: 50vw;
-    background-color: black;
+}
+
+main {
+    padding: 1vw;
+    font-size: 30px;
+
     color: white;
+}
+
+article{
+    display: block;
+    padding: 10px;
+    color:#debc78;
+    width: 600px;
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 0px #665635;
+    float: left;
+}
+
+main > :nth-child(even){
+    float: right;
+    text-align: right;
+}
+
+
+article h1{
+    margin-bottom: 0%;
+}
+
+article p{
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    margin: 0%;
+}
+
+a{
+    color:#ecc880;
 }
