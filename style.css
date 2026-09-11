@@ -1,0 +1,17 @@
+body{
+    margin: 0%;
+}
+
+.profile_bg td{
+    width: 33%;
+    padding: 0%;
+}
+
+.profile_bg table{
+    border-collapse: collapse;
+}
+
+.profile_bg img{
+    width: 100%;
+    display: block;
+}
