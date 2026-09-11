@@ -10,9 +10,10 @@ body{
 }
 
 .fixed {
+    z-index: 1;
     position: fixed;
     left: 50%;
-    transform: translate(-50%, -5%);
+    transform: translate(-50%, 40%);
 
     color: #cfbb64;
     font-family: InstrumentSeriff;
@@ -40,9 +41,21 @@ body{
 
 .profile_bg table{
     border-collapse: collapse;
+    margin: 0%;
 }
 
 .profile_bg img{
     width: 100%;
     display: block;
+}
+
+main{
+    position: relative;
+    z-index: 10;
+
+    margin: 0%;
+    width: 100vw;
+    height: 50vw;
+    background-color: black;
+    color: white;
 }
