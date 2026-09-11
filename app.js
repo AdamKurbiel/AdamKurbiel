@@ -1,26 +1,29 @@
-const text = document.querySelector(".fixed");
+const title = document.querySelector(".title");
 
-const maxSize = 18;
-const minSize = 5;
-const scrollDistance = 600;
-const smoothness = 0.5
+const MAX_SIZE = 18;
+const MIN_SIZE = 5;
+const SCROLL_DISTANCE = 600;
 
-let currentSize = maxSize;
-let targetSize = maxSize;
+let currentSize = MAX_SIZE;
 
-function update() {
-    const progress = Math.min(window.scrollY / scrollDistance, 1);
+function updateTitle() {
+    const scroll = window.scrollY;
 
-    targetSize = maxSize - (maxSize - minSize) * progress;
+    const progress = Math.min(
+        scroll / SCROLL_DISTANCE,
+        1
+    );
 
-    currentSize += (targetSize - currentSize) * smoothness;
+    const targetSize =
+        MAX_SIZE -
+        (MAX_SIZE - MIN_SIZE) * progress;
 
-    text.style.fontSize = `${currentSize}vw`;
+    currentSize +=
+        (targetSize - currentSize) * 0.12;
 
-    requestAnimationFrame(update);
+    title.style.fontSize = `${currentSize}vw`;
+
+    requestAnimationFrame(updateTitle);
 }
 
-window.onbeforeunload = function () {
-  window.scrollTo(0, 0);
-}
-update();
+updateTitle();
